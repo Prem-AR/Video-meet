@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.904);
+  /* background-image: -webkit-linear-gradient(75deg, #050f34 49%, #020245 51%); */
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+}
+
+input {
+  width: 30vw;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 3px solid rgb(12, 168, 193);
+}
+
+.generate_roomId {
+  width: 30vw;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgba(32, 72, 111, 0.884);
+}
+
+button {
+  width: 10vw;
+  padding: 15px;
+  background-color: rgb(33, 113, 122);
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+::placeholder {
+  color: rgb(64, 26, 26);
+}
+
+h1 {
+  color: white;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  input {
+    width: 80%;
+  }
+
+  button {
+    width: 50%;
+  }
+
+  .generate_roomId {
+    width: 80%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

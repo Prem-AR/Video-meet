@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script>
+        const room_id = `<%= room_id %>`
+    </script>
+</head>
+<body>
+    
+    <form action="/" method="POST">
+        <input type="text" name="name" class="username" placeholder="Enter your name..." autocomplete="off" required>
+        <input type="text" name="roomId" class="roomId" placeholder="Enter or generate room id..." autocomplete="off" required>
+        <button type="button" class="generate_roomId">Generate room id</button>
+        <button type="submit">Get in</button>
+        <p style="color: red; margin-top: 10px;"><%= info %></p>
+    </form>
+  
+    <script>
+document.querySelector(".generate_roomId").addEventListener("click", () => {
+    document.querySelector(".roomId").value = room_id;
+})
+
+document.querySelector(".username").addEventListener("input", () => {
+    document.querySelector("p").style.display = "none";
+})
+    </script>
+</body>
+</html>
