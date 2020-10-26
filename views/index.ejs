@@ -13,7 +13,7 @@
     
     <form action="/" method="POST">
         <input type="text" name="name" class="username" placeholder="Enter your name..." autocomplete="off" required>
-        <input type="text" name="roomId" class="roomId" placeholder="Enter or generate room id..." autocomplete="off" required>
+        <input type="text" name="roomId" value="<%= existing_roomId %>" class="roomId" placeholder="Enter or generate room id..." autocomplete="off" required>
         <button type="button" class="generate_roomId">Generate room id</button>
         <button type="submit">Get in</button>
         <p style="color: red; margin-top: 10px;"><%= info %></p>

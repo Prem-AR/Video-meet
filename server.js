@@ -21,7 +21,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.render("index", { room_id: uuidV4(), info: "" });
+    res.render("index", { room_id: uuidV4(), info: "", existing_roomId: "" });
     // res.redirect(`/${uuidV4()}`)
 })
 
@@ -31,10 +31,8 @@ app.post("/", (req, res) => {
 
     const userExist = users.find(user => user === name)
     if (userExist) {
-        res.render("index", { room_id: uuidV4(), info: "username already exist" })
+        res.render("index", { room_id: uuidV4(), info: "username already exist", existing_roomId: "" })
     } else {
-        users.push(name)
-        // console.log(users);
         res.redirect(`/meeting?name=${name}&room=${room}`)
     }
 
@@ -42,10 +40,15 @@ app.post("/", (req, res) => {
 
 
 app.get("/meeting", (req, res) => {
-    let name = req.query.name;
-    let room = req.query.room;
-    if (name && room)
+    const name = req.query.name;
+    const room = req.query.room;
+    const userExist = users.find(user => user === name)
+    if (userExist) {
+        res.render("index", { existing_roomId: room, room_id: uuidV4(), info: "" })
+    } else {
+        users.push(name)
         res.render("room", { username: name, roomId: room })
+    }
 })
 
 
